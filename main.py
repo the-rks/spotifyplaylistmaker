@@ -1,7 +1,7 @@
 import requests
 
 # Replace these variables with your credentials and tokens
-access_token = 'YOUR_ACCESS_TOKEN'
+access_token = 'BQDPLkPUSstN-omrzzpWtekUq6ExEO1fBgqKzq4NH7bsazxhKg24z__NLxHJW_sc85OLSyIoX6GMEaIS2sJHi-hdrbJycBemFm4lJ-RJhfZSGw1o69WV6hykeK9Z65qXmy9ubihqRtbtA0jRbagu9_497tI-UvEhkaylNVnMnR7Dvhvdodn4Fd5KHN_4aRfXdzHhyXUHH7UUE6b-nX8Zd3bQzWf_heewh1eQtFes2pL9w9rSDx1CebpITwpR89Tao42UGIa4c31LlQreZ9Yv1MyLU5eOgg0t'
 
 headers = {
     'Authorization': f'Bearer {access_token}'
