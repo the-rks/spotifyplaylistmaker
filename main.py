@@ -1,12 +1,14 @@
-import requests
+import spotipy
+from spotipy.oauth2 import SpotifyOAuth
 
-# Replace these variables with your credentials and tokens
-access_token = 'BQDPLkPUSstN-omrzzpWtekUq6ExEO1fBgqKzq4NH7bsazxhKg24z__NLxHJW_sc85OLSyIoX6GMEaIS2sJHi-hdrbJycBemFm4lJ-RJhfZSGw1o69WV6hykeK9Z65qXmy9ubihqRtbtA0jRbagu9_497tI-UvEhkaylNVnMnR7Dvhvdodn4Fd5KHN_4aRfXdzHhyXUHH7UUE6b-nX8Zd3bQzWf_heewh1eQtFes2pL9w9rSDx1CebpITwpR89Tao42UGIa4c31LlQreZ9Yv1MyLU5eOgg0t'
+scope = "user-library-read"
+SPOTIPY_CLIENT_ID = "f0a3099ca9a84a3fb39187237750d4ed"
+SPOTIPY_CLIENT_SECRET = "cdcbd1ef8031430ba7cf655c4813c76d"
+SPOTIPY_REDIRECT_URI='https://www.google.com/'
 
-headers = {
-    'Authorization': f'Bearer {access_token}'
-}
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
+<<<<<<< HEAD
 response = requests.get('https://api.spotify.com/v1/me/tracks', headers=headers)
 
 if response.status_code == 200:
@@ -20,3 +22,9 @@ else:
 # comment! 
 
 #another comment yey 
+=======
+results = sp.current_user_saved_tracks()
+for idx, item in enumerate(results['items']):
+    track = item['track']
+    print(idx, track['artists'][0]['name'], " - ", track['name'])
+>>>>>>> 84833ab76b5480eadd22d2b9e446ec7be35504ba
