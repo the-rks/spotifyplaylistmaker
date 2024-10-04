@@ -1,3 +1,4 @@
+import requests
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
@@ -7,8 +8,8 @@ SPOTIPY_CLIENT_SECRET = "cdcbd1ef8031430ba7cf655c4813c76d"
 SPOTIPY_REDIRECT_URI='https://www.google.com/'
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
+headers = [] #get the songs later
 
-<<<<<<< HEAD
 response = requests.get('https://api.spotify.com/v1/me/tracks', headers=headers)
 
 if response.status_code == 200:
@@ -22,9 +23,7 @@ else:
 # comment! 
 
 #another comment yey 
-=======
 results = sp.current_user_saved_tracks()
 for idx, item in enumerate(results['items']):
     track = item['track']
     print(idx, track['artists'][0]['name'], " - ", track['name'])
->>>>>>> 84833ab76b5480eadd22d2b9e446ec7be35504ba
